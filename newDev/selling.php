@@ -62,7 +62,7 @@ class customer
     public static function getBill( $sName, $aSellings )
     {
         $fTotal = 0.0;
-        $sMessage = 'Rechnung für Kunde ' . $sName . "\n\n";
+        $sMessage = 'Bill for the customer ' . $sName . "\n\n";
 
         /** @var $oSelling selling */
         foreach( $aSellings as $oSelling ) {
@@ -73,15 +73,15 @@ class customer
             if ( 20 <= $oSelling->amount ) {
                 switch ( $oSelling->getArticle()->getMarginType() ) {
                     case article::MARGIN_TYPE_A:
-                        $sMessage .= 'Rabatt ( 5% ): -' . ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 5 ) / 100 . "\n";
+                        $sMessage .= 'Sales discount ( 5% ): -' . ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 5 ) / 100 . "\n";
                         $fSubTotal -= ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 5 ) / 100;
                         break;
                     case article::MARGIN_TYPE_B:
-                        $sMessage .= 'Rabatt ( 10% ): -' . ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 10 ) / 100 . "\n";
+                        $sMessage .= 'Sales discount ( 10% ): -' . ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 10 ) / 100 . "\n";
                         $fSubTotal -= ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 10 ) / 100;
                         break;
                     case article::MARGIN_TYPE_C:
-                        $sMessage .= 'Rabatt ( 20% ): -' . ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 20 ) / 100 . "\n";
+                        $sMessage .= 'Sales discount ( 20% ): -' . ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 20 ) / 100 . "\n";
                         $fSubTotal -= ( $oSelling->amount * $oSelling->getArticle()->getPrice() * 20 ) / 100;
                         break;
                 }
@@ -89,7 +89,7 @@ class customer
             $fTotal += $fSubTotal;
         }
 
-        $sMessage .= "\n\nDie Rechnungssumme beträgt: $fTotal\n\n";
+        $sMessage .= "\n\nInvoice total: $fTotal\n\n";
 
         return $sMessage;
     }
