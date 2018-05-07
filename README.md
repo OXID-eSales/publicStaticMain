@@ -15,17 +15,12 @@ The dealer "I'm dealer, not a developer" needs your help. To make sure the progr
 dealer wants it to be able to create the bill in different output formats, e.g. HTML. Unfortunately the original
 developer is long gone and nobody is familiar with the code anymore.
 
-You have 60 minutes of time, of course this is very limited and you won't be able to refactor all of the code so
-prioritize. Focus on the ability to provide different output formats, but you only need to implement it for the console
-output. Make sure the program is able to run when you are done.
+You have 30 minutes time to look over the code. Don't delve into  too much
+details in the beginning, but try to get an overview what the code does. It
+is completely working: You may run the publicStaticMain.php script and see
+the expected output.
 
-We like spaghetti, but only at lunch time, not as code. So whatever you touch, keep in mind that your changed code
-must improve maintainability, readability and testability.
-
-If you have further ideas on how you would refactor the code but there is no time left to implement it put them at the
-end of this document. We would love to see that you have an eye for the "bigger picture".
-
-The publicStaticMain.php script is an example of how to run the code and what to expect as output.
-
-Your Suggestions:
------------------
+Then try to identify problems with the code - there are several levels
+on which this code is bad. You need not to rewrite it now, but just note
+down, what you would change and then we will talk about the proposed
+changes afterwards.
